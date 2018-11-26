@@ -295,9 +295,6 @@ public class BaseTest {
     TestUtils.createWLDFModule(
         adminPodName, domainNS, ((Integer) domainMap.get("t3ChannelPort")).intValue());
 
-    logger.info("Sleeping for 30 seconds for createWLDFModule");
-    Thread.sleep(30 * 1000);
-
     String clusterName = domainMap.get("clusterName").toString();
     int replicaCntBeforeScaleup = TestUtils.getClusterReplicas(domainUid, clusterName, domainNS);
     logger.info("replica count before scaleup " + replicaCntBeforeScaleup);
