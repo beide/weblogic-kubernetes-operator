@@ -698,8 +698,10 @@ public class TestUtils {
             + t3ChannelPort;
 
     // call callpyscript.sh in pod to deploy wldf module
-    TestUtils.callShellScriptByExecToPod(
-        "/shared/callpyscript.sh", arguments, adminPodName, domainNS);
+    String stdout =
+        TestUtils.callShellScriptByExecToPod(
+            "/shared/callpyscript.sh", arguments, adminPodName, domainNS);
+    logger.info("debug- createWLDFModule returns: " + stdout);
   }
 
   public static void createRBACPoliciesForWLDFScaling() throws Exception {

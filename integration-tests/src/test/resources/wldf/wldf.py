@@ -82,5 +82,5 @@ while(numWatchEval < 1) and (maxwait > 0):
   systime.sleep(1)
   numWatchEval=cmo.getTotalHarvesterWatchEvaluations()
 
-print "wldf.py done"
+print "wldf.py done numWatchEval is ", numWatchEval, " maxwait is ", maxwait
 
