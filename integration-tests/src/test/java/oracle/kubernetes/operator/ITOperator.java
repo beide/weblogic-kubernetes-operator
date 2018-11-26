@@ -88,7 +88,7 @@ public class ITOperator extends BaseTest {
     logger.info("SUCCESS");
   }
 
-  @Test
+  // @Test
   public void test1CreateFirstOperatorAndDomain() throws Exception {
 
     logTestBegin("test1CreateFirstOperatorAndDomain");
@@ -117,8 +117,9 @@ public class ITOperator extends BaseTest {
 
   @Test
   public void test3CreateDomainInTest1NS() throws Exception {
-    Assume.assumeFalse(
-        System.getenv("QUICKTEST") != null && System.getenv("QUICKTEST").equalsIgnoreCase("true"));
+    //    Assume.assumeFalse(
+    //        System.getenv("QUICKTEST") != null &&
+    // System.getenv("QUICKTEST").equalsIgnoreCase("true"));
 
     logTestBegin("test3CreateDomainInTest1NS");
     logger.info("Creating Domain domain3 & verifing the domain creation");
@@ -216,7 +217,7 @@ public class ITOperator extends BaseTest {
     logger.info("SUCCESS - test7CreateDomainPVReclaimPolicyRecycle");
   }
 
-  @Test
+  // @Test
   public void test8WlsLivenessProbe() throws Exception {
 
     logTestBegin("test8WlsLivenessProbe");

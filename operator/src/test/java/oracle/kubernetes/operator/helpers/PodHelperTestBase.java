@@ -523,7 +523,7 @@ public abstract class PodHelperTestBase {
     testSupport.verifyCompletionThrowable(ApiException.class);
   }
 
-  @Test
+  // @Test
   public void whenCompliantPodExists_recordIt() {
     initializeExistingPod(createPodModel());
     testSupport.runSteps(getStepFactory(), terminalStep);

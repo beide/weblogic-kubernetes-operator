@@ -696,6 +696,10 @@ public abstract class PodStepContext implements StepContextConstants {
     addEnvVar(
         vars, "SERVICE_NAME", LegalNames.toServerServiceName(getDomainUID(), getServerName()));
     addEnvVar(vars, "AS_SERVICE_NAME", LegalNames.toServerServiceName(getDomainUID(), getAsName()));
+    addEnvVar(
+        vars,
+        "JAVA_OPTIONS",
+        "-Dweblogic.StdoutDebugEnabled=false -Dweblogic.debug.DebugSituationalConfig=true -Dweblogic.debug.DebugDiagnosticWatch=true -Dweblogic.debug.DebugDiagnosticsExpressionPoller=true ");
     hideAdminUserCredentials(vars);
   }
 
