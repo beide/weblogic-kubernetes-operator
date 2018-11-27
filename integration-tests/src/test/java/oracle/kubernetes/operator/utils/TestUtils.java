@@ -702,6 +702,9 @@ public class TestUtils {
         TestUtils.callShellScriptByExecToPod(
             "/shared/callpyscript.sh", arguments, adminPodName, domainNS);
     logger.info("debug- createWLDFModule returns: " + stdout);
+
+    logger.info("....Sleeping for extra 30 seconds for WLDF module......");
+    Thread.sleep(30 * 1000);
   }
 
   public static void createRBACPoliciesForWLDFScaling() throws Exception {
