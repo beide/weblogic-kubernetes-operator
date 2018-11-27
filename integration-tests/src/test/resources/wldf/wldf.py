@@ -76,7 +76,7 @@ numWatchEval=cmo.getTotalHarvesterWatchEvaluations()
 
 maxwait=300
 
-while(numWatchEval < 1) and (maxwait > 0):
+while(numWatchEval < 5) and (maxwait > 0):
   print numWatchEval
   maxwait -= 1
   systime.sleep(1)
