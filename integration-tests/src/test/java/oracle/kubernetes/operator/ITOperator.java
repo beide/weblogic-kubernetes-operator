@@ -90,6 +90,8 @@ public class ITOperator extends BaseTest {
 
   @Test
   public void test1CreateFirstOperatorAndDomain() throws Exception {
+    Assume.assumeFalse(
+        System.getenv("QUICKTEST") != null && System.getenv("QUICKTEST").equalsIgnoreCase("true"));
 
     logTestBegin("test1CreateFirstOperatorAndDomain");
     testCreateOperatorManagingDefaultAndTest1NS();
@@ -263,8 +265,6 @@ public class ITOperator extends BaseTest {
 
   @Test
   public void testBCreateDomainWithDefaultValuesInSampleInputs() throws Exception {
-    Assume.assumeFalse(
-        System.getenv("QUICKTEST") != null && System.getenv("QUICKTEST").equalsIgnoreCase("true"));
     logTestBegin("testBCreateDomainWithDefaultValuesInSampleInputs");
     logger.info("Creating Domain domain8 & verifing the domain creation");
     if (operator1 == null) {

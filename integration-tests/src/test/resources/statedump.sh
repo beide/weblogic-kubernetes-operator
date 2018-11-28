@@ -59,6 +59,13 @@ function state_dump {
       kubectl log $pod -n $namespace > $logfile
       kubectl describe pod $pod -n $namespace > $descfile
     done
+    local domains="`kubectl get domains -n $namespace --ignore-not-found | egrep -v -e "(STATUS)" | awk '{print $1}'`"
+    set -x
+    local domains
+    for domain in $domains; do
+      local domaindescfile=${DUMP_DIR}/domain-describe.${namespace}.${domain}
+      kubectl describe domain $domain -n $namespace > $domaindescfile
+    done
   done
 
   # use a job to archive PV, /scratch mounts to PV_ROOT in the K8S cluster
